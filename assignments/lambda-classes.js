@@ -38,7 +38,7 @@ class Instructor extends Person {
     console.log(`${student.name} receives a perfect score on ${subject}`);
   }
 
-  substractGrade(student) { // Stretch problem
+  assignGrade(student) { // Stretch problem
     let newGrade = Math.round(Math.random() * 100);
     student.grade = newGrade;
 
@@ -125,12 +125,12 @@ pm2.debugsCode(student1, "Python");
 
 // Stretch problem
 while (student1.grade === undefined) {
-  instructor1.substractGrade(student1);
+  instructor1.assignGrade(student1);
   student1.graduate();
 }
 
 while (student2.grade === undefined) {
-  pm1.substractGrade(student2);
+  pm1.assignGrade(student2);
   student2.graduate();
 }
 
