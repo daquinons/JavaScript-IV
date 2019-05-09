@@ -37,6 +37,13 @@ class Instructor extends Person {
   grade(student, subject) {
     console.log(`${student.name} receives a perfect score on ${subject}`);
   }
+
+  substractGrade(student) { // Stretch problem
+    let newGrade = Math.round(Math.random() * 100);
+    student.grade = newGrade;
+
+    console.log(`${student.name} has a grade of ${student.grade}`);
+  }
 }
 
 const instructor1 = new Instructor({name: 'Mike', age: 35, location: 'New York', gender: 'Male', specialty: 'HTML', favLanguage: 'Javascript', catchPhrase: 'Here we go!'});
@@ -56,6 +63,7 @@ class Student extends Person {
     this.previousBackground = object.previousBackground;
     this.className = object.className;
     this.favSubjects = object.favSubjects;
+    this.grade = undefined; // Stretch problem
   }
 
   listsSubjects() {
@@ -69,6 +77,15 @@ class Student extends Person {
   sprintChallenge(subject) {
     console.log(`${this.name} has begun sprint challenge on ${subject}`);
   }
+
+  graduate() {
+    if (this.grade >= 70) {
+      console.log(`Congratulations to ${this.name} for graduating!`);
+    } else {
+      console.log(`Oops, ${this.name} did not graduate`);
+      this.grade = undefined;
+    }
+  }
 }
 
 const student1 = new Student({name: 'John', age: 32, location: 'California', gender: 'Male', previousBackground: 'Finance', className: 'WEBEU2', favSubjects: ['React', 'Data structures']});
@@ -79,5 +96,42 @@ const student2 = new Student({name: 'Sarah', age: 22, location: 'Boston', gender
 console.log(person2);
 student2.PRAssignment("CSS");
 student2.sprintChallenge("Advanced Javascript");
+
+
+class ProjectManager extends Instructor {
+  constructor(object) {
+    super(object);
+    this.gradClassName = object.gradClassName;
+    this.favInstructor = object.favInstructor;
+  }
+
+  standUp(channel) {
+    console.log(`${this.name} announces to ${channel}, @channel standy times!​​​​​`);
+  }
+
+  debugsCode(student, subject) {
+    console.log(`${this.name} debugs ${student.name}'s code on ${subject}`);
+  }
+}
+
+const pm1 = new ProjectManager({name: 'Mike', age: 35, location: 'New York', gender: 'Male', specialty: 'HTML', favLanguage: 'Javascript', catchPhrase: 'Here we go!', gradClassName: 'WEBEU2', favInstructor: 'Gabe'});
+console.log(pm1);
+pm1.standUp('Webeu2_Mike');
+
+const pm2 = new ProjectManager({name: 'Sarah', age: 22, location: 'Boston', gender: 'Female', specialty: 'Algorithms', favLanguage: 'Python', catchPhrase: 'This is going to be fun', gradClassName: 'WEBEU2', favInstructor: 'Gabe'});
+console.log(pm2);
+pm2.debugsCode(student1, "Python");
+
+
+// Stretch problem
+while (student1.grade === undefined) {
+  instructor1.substractGrade(student1);
+  student1.graduate();
+}
+
+while (student2.grade === undefined) {
+  pm1.substractGrade(student2);
+  student2.graduate();
+}
 
 
