@@ -48,13 +48,13 @@ class Instructor extends Person {
 
 const instructor1 = new Instructor({ name: 'Mike', age: 35, location: 'New York', gender: 'Male', specialty: 'HTML', favLanguage: 'Javascript', catchPhrase: 'Here we go!' });
 console.log(instructor1);
-instructor1.demo("Classes");
-instructor1.grade({ name: "David" }, "Javascript");
+instructor1.demo('Classes');
+instructor1.grade({ name: 'David' }, 'Javascript');
 
 const instructor2 = new Instructor({ name: 'Sarah', age: 22, location: 'Boston', gender: 'Female', specialty: 'Algorithms', favLanguage: 'Python', catchPhrase: 'This is going to be fun' });
 console.log(instructor2);
-instructor2.demo("Python");
-instructor2.grade({ name: "Juan" }, "Python");
+instructor2.demo('Python');
+instructor2.grade({ name: 'Juan' }, 'Python');
 
 
 class Student extends Person {
@@ -94,8 +94,8 @@ student1.listsSubjects();
 
 const student2 = new Student({ name: 'Sarah', age: 22, location: 'Boston', gender: 'Female', previousBackground: 'Designer', className: 'WEBEU2', favSubjects: ['CSS', 'Node JS'] });
 console.log(person2);
-student2.PRAssignment("CSS");
-student2.sprintChallenge("Advanced Javascript");
+student2.PRAssignment('CSS');
+student2.sprintChallenge('Advanced Javascript');
 
 
 class ProjectManager extends Instructor {
@@ -120,7 +120,7 @@ pm1.standUp('Webeu2_Mike');
 
 const pm2 = new ProjectManager({ name: 'Sarah', age: 22, location: 'Boston', gender: 'Female', specialty: 'Algorithms', favLanguage: 'Python', catchPhrase: 'This is going to be fun', gradClassName: 'WEBEU2', favInstructor: 'Gabe' });
 console.log(pm2);
-pm2.debugsCode(student1, "Python");
+pm2.debugsCode(student1, 'Python');
 
 
 // Stretch problem
